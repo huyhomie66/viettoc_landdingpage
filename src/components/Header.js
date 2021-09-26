@@ -10,21 +10,30 @@ function NavBarMobile({
 }) {
   return (
     <div className="navbar-mobile">
-      <input id="toggle" type="checkbox" />
+      <div className="navbar-menu">
+        <input id="toggle" type="checkbox" />
 
-      <label className="toggle-container" for="toggle">
-        <span className="button button-toggle"></span>
-      </label>
+        <label className="toggle-container" for="toggle">
+          <span className="button button-toggle"></span>
+        </label>
 
-      <nav className="nav">
-        {navbarItems.map((e) => {
-          return (
-            <a className="nav-item" href="/">
-              {e.title}
-            </a>
-          );
-        })}
-      </nav>
+        <nav className="nav">
+          {navbarItems.map((e) => {
+            return (
+              <a className="nav-item" href="/">
+                {e.title}
+              </a>
+            );
+          })}
+        </nav>
+      </div>
+      {/* <button
+        className="register"
+        onClick={onRegister}
+        style={{ backgroundColor: "#9E1C1E" }}
+      >
+        {register}
+      </button> */}
     </div>
   );
 }
@@ -43,7 +52,11 @@ function NavbarDesktop({
         })}
       </div>
 
-      <button onClick={onRegister} style={{ backgroundColor: "#9E1C1E" }}>
+      <button
+        className="register"
+        onClick={onRegister}
+        style={{ backgroundColor: "#9E1C1E" }}
+      >
         {register}
       </button>
     </div>
