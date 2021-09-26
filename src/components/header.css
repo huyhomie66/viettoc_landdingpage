@@ -1,0 +1,7 @@
+header {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}

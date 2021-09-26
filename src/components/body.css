@@ -1,0 +1,33 @@
+#toggle:checked ~ .content {
+  padding-top: 30px;
+}
+#toggle:checked ~ .content:before {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Dummy Content */
+.content {
+  position: relative;
+  text-align: center;
+  transition: 0.5s;
+}
+.content:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.banner {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../assets/family.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; /* Center the image */
+}

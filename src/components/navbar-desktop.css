@@ -1,0 +1,43 @@
+.navbar-desktop {
+  background-color: "transparent";
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+.navbar-desktop > div > a {
+  color: white;
+}
+
+.navbar-desktop > .titles {
+  color: white;
+  width: 40%;
+  display: flex;
+
+  justify-content: space-around;
+}
+
+.navbar-desktop > button {
+  height: 33px;
+  width: 167px;
+  border-radius: 4px;
+  padding: 8px, 11px, 8px, 11px;
+  color: white;
+  border: none;
+}
+
+.navbar-desktop > a {
+  color: white;
+}
+
+.navbar-desktop > img {
+  height: 48px;
+  width: 48px;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar-desktop {
+    display: none;
+  }
+}
