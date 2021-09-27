@@ -1,5 +1,5 @@
-import "./body.css";
-import logo from "../assets/logo.png";
+import "./banner.css";
+import logo from "../../assets/logo.png";
 
 const Banner = () => {
   const title = "GIA TỘC ĐOÀN VIÊN";
@@ -19,12 +19,4 @@ const Banner = () => {
   );
 };
 
-const Body = () => {
-  return (
-    <div class="content">
-      <Banner />
-    </div>
-  );
-};
-
-export default Body;
+export default Banner;
