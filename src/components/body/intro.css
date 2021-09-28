@@ -6,7 +6,8 @@
   background-size: cover;
   background-position: center;
   display: flex;
-   align-items: center; 
+  justify-content: center;
+  align-items: center; 
   flex-direction: column;
 }
 
@@ -46,6 +47,7 @@
   max-height: 578px;
   font-family: Inter;
   font-weight: 400;
+  color: #585858;
   text-align: start;
 }
 
@@ -70,7 +72,41 @@
 
 .intro > div > img {
   position: relative;
-
-  /* left: 21vw; */
-  /* padding-top: 30vh; */
 }
+
+
+
+.testimonial { 
+  display: flex;
+  flex-direction: row;
+  min-width: 60vw;
+  align-self: center;
+  justify-content: space-around;
+}
+
+.testimonial > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content:space-evenly
+  
+}
+
+
+.testimonial > img {
+  height: 90px;
+  width:  90px;
+
+  
+}
+
+
+
+.testimonial > div > h1 {
+  font-family: "Playfair Display";
+  color: gold;
+  font-weight: 700;
+  font-size: 64;
+}
+
+
