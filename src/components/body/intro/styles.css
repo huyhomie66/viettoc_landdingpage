@@ -8,10 +8,7 @@
 }
 
 .intro > div {
-  display: flex;
   height: 100vh;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-around;
 }
 
@@ -20,11 +17,8 @@
   width: 52vw;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  display: flex;
   padding-bottom: 58px;
   z-index: 10;
-
-  flex-direction: row;
   justify-content: space-evenly;
   background-color: #fff1dc;
 }
@@ -49,18 +43,11 @@
 
 .block-body > .title {
   max-width: 234px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color: #003168;
 }
 
 .block-body > .col {
-  display: flex;
-  flex-direction: column;
   width: 50%;
-  justify-content: flex-end;
 }
 
 .block-body > .col > p {
@@ -84,17 +71,12 @@
 }
 
 .testimonial {
-  display: flex;
-  flex-direction: row;
   min-width: 60vw;
   align-self: center;
   justify-content: space-around;
 }
 
 .testimonial > div {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   justify-content: space-evenly;
 }
 

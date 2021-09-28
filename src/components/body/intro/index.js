@@ -12,8 +12,8 @@ const Block = ({ description, buttonTitle }) => {
       <div className="flower">
         <img alt="flower" src={flower} />
       </div>
-      <div className="block-body">
-        <div className="title">
+      <div className="block-body row">
+        <div className="title col item-center content-center">
           <img src={intro} alt="intro" />
         </div>
         <div className="col">
@@ -29,9 +29,9 @@ const Block = ({ description, buttonTitle }) => {
 const Testimonial = ({ testimonial }) => {
   return (
     <React.Fragment>
-      <div className="testimonial">
+      <div className="testimonial row ">
         {testimonial.data.map((e, i) => (
-          <div key={i}>
+          <div key={i} className="col item-center">
             <img src={e.icon} alt="icon" />
             <span>{e.count}</span>
             <p>{e.title}</p>
@@ -64,7 +64,7 @@ const Intro = () => {
 
   return (
     <div className="intro">
-      <div>
+      <div className="col item-center">
         <Block description={description} buttonTitle={buttonTitle} />
         <Testimonial testimonial={testimonial} />
       </div>

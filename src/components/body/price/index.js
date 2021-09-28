@@ -2,24 +2,32 @@ import "./styles.css";
 import arrowLeft from "../../../assets/arrow-left.png";
 import arrowRight from "../../../assets/arrow-right.png";
 import rectangle from "../../../assets/rectangle.png";
+import { Fragment } from "react";
 
 const PriceBanner = ({ price, title, description, button }) => {
   return (
-    <div className={"price-normal-item"}>
-      <div className="price">
-        <span>{price}</span>
-        <h1 className="unit">đ</h1>
-        <p>/năm</p>
+    <div className={"price-item col content-center"}>
+      <div className="price row item-center">
+        {price && (
+          <Fragment>
+            <span>{price}</span>
+            <h1 className="unit">đ</h1>
+            <p>/năm</p>
+          </Fragment>
+        )}
       </div>
 
       <h1>{title?.value}</h1>
+
       {description &&
         description.map((e, i) => {
           return (
-            <div key={i}>
-              <h5>{e.bold}</h5>
-              <p>{e.normal}</p>
+            <div key={i} className="description row item-center">
               <img src={rectangle} alt="rectangle" />
+              <div className="row item-center">
+                <h4>{e.bold}</h4>
+                <p>{e.normal}</p>
+              </div>
             </div>
           );
         })}
@@ -107,7 +115,7 @@ const Price = () => {
       {
         price: "15.000.000",
         title: {
-          value: "Đồng tâm",
+          value: "ĐỒNG TÂM",
           className: "price-special-title",
         },
         description: [
@@ -133,7 +141,7 @@ const Price = () => {
         },
         price: "50.000.000",
         title: {
-          value: "Đồng tâm",
+          value: "THỊNH VƯỢNG",
           className: "price-special-title",
         },
         description: [
@@ -154,12 +162,11 @@ const Price = () => {
       },
       {
         promotion: {
-          value: "Phổ biến nhất",
+          value: "Đặc biệt",
           className: "price-special-promotion",
         },
-        price: "50.000.000",
         title: {
-          value: "Đồng tâm",
+          value: "BẢN SẮC",
           className: "price-special-title",
         },
         description: [
@@ -183,18 +190,18 @@ const Price = () => {
 
   const title = "CÁC GÓI TẠI VIỆT TỘC";
   return (
-    <div className="price-container">
-      <div className="title">
+    <div className="price-container col item-center">
+      <div className="title row item-center">
         <img alt="arrow-left" src={arrowLeft} />
         <h1>{title}</h1>
         <img alt="arrow-right" src={arrowRight} />
       </div>
-      <div className="price-normal">
+      <div className="price-normal row">
         {price.normal.map((props, key) => (
           <PriceBanner {...props} key={key} />
         ))}
       </div>
-      <div className="price-special">
+      <div className="price-special row">
         {price.special.map((props, key) => (
           <PriceBanner {...props} key={key} />
         ))}

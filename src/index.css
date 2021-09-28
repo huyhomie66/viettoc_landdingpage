@@ -10,6 +10,25 @@ body {
   margin: 0;
 }
 
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-center {
+  display: flex;
+  align-items: center;
+}
+
+.content-center {
+  display: flex;
+  justify-content: center;
+}
 
 * {
   box-sizing: border-box;
@@ -18,7 +37,6 @@ body {
 ::-webkit-scrollbar {
   width: 0;
 }
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

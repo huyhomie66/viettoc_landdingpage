@@ -4,10 +4,6 @@
   background-image: url("../../../assets/wheat.png");
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   justify-content: space-around;
   background-position: center;
 }
@@ -17,10 +13,7 @@
 
 .price-container > .title {
   justify-content: space-around;
-  align-items: center;
   width: 60%;
-  display: flex;
-  flex-direction: row;
 }
 .price-container > .title > h1 {
   font-family: "Playfair Display";
@@ -36,11 +29,38 @@
   height: 10px;
 }
 
-.price {
-  align-self: center;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.price-item > .description > div > h4 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.price-item > .description > div > img {
+  height: 6px;
+  width: 6px;
+}
+
+.price-item > h1 {
+  color: hsla(359, 70%, 37%, 1);
+  font-family: "Playfair Display";
+}
+.price-item > button {
+  background-color: #ffca78;
+  border: none;
+  height: 48px;
+  min-width: 144px;
+  font-size: 18px;
+  border-radius: 8px;
+  padding: 12px, 28px, 12px, 28px;
+  color: hsla(359, 70%, 37%, 1);
+  align-self: flex-end;
+}
+
+.price-item {
+  min-width: 308px;
+  min-height: 480px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: #ffffff;
+  border-radius: 20px;
 }
 
 .price > .unit {
@@ -60,22 +80,9 @@
 .price-normal {
   width: 60%;
   justify-content: space-around;
-  display: flex;
-  flex-direction: row;
-}
-
-.price-normal-item {
-  min-width: 308px;
-  min-height: 480px;
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  border-radius: 20px;
 }
 
 .price-special {
   width: 60%;
   justify-content: space-around;
-  display: flex;
-  flex-direction: row;
 }
