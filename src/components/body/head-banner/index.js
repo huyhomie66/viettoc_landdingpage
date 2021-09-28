@@ -1,5 +1,5 @@
-import "./banner.css";
-import logo from "../../assets/logo.png";
+import "./styles.css";
+import logo from "../../../assets/logo.png";
 
 const Banner = () => {
   const title = "GIA TỘC ĐOÀN VIÊN";

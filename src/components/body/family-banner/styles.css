@@ -1,0 +1,10 @@
+.family-banner {
+  min-width: 100vw;
+  height: 100vh;
+  background-image: url("../../../assets/family.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* background: rgba(15, 13, 13, 0.3); */
+  opacity: 0.8;
+}

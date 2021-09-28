@@ -1,6 +1,7 @@
 .intro {
   min-width: 100vw;
-  background-image: url("../../assets/red.png");
+  height: 100vh;
+  background-image: url("../../../assets/red.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

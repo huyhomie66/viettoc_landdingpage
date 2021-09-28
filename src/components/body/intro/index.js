@@ -1,9 +1,9 @@
-import "./intro.css";
-import intro from "../../assets/intro.png";
-import flower from "../../assets/flower.png";
-import hat from "../../assets/hat.png";
-import vietnam from "../../assets/vietnam.png";
-import comeinand from "../../assets/comeinand.png";
+import "./styles.css";
+import intro from "../../../assets/intro.png";
+import flower from "../../../assets/flower.png";
+import hat from "../../../assets/hat.png";
+import vietnam from "../../../assets/vietnam.png";
+import comeinand from "../../../assets/comeinand.png";
 import React from "react";
 
 const Block = ({ description, buttonTitle }) => {

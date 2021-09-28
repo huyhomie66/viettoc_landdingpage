@@ -1,14 +1,16 @@
 import React from "react";
-import Banner from "./Banner";
-import Intro from "./Intro";
+import HeadBanner from "./head-banner";
+import Intro from "./intro";
+import FamilyBanner from "./family-banner";
 
 const Body = () => {
   return (
-    <React.Fragment >
-      <Banner />
+    <React.Fragment>
+      <HeadBanner />
       <Intro />
-    </React.Fragment >
-  )
+      <FamilyBanner />
+    </React.Fragment>
+  );
 };
 
 export default Body;
