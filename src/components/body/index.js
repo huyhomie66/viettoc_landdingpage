@@ -3,7 +3,7 @@ import Intro from "./Intro";
 
 const Body = () => {
   return (
-    <div class="content">
+    <div className="content">
       <Banner />
       <Intro />
     </div>

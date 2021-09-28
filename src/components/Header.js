@@ -12,15 +12,14 @@ function NavBarMobile({
     <div className="navbar-mobile">
       <div className="navbar-menu">
         <input id="toggle" type="checkbox" />
-
-        <label className="toggle-container" for="toggle">
+        <label className="toggle-container" htmlFor="toggle">
           <span className="button button-toggle"></span>
         </label>
 
         <nav className="nav">
-          {navbarItems.map((e) => {
+          {navbarItems.map((e, i) => {
             return (
-              <a className="nav-item" href="/">
+              <a key={i} className="nav-item" href="/">
                 {e.title}
               </a>
             );
@@ -47,8 +46,12 @@ function NavbarDesktop({
     <div className="navbar-desktop">
       <img alt="logo" src={logo} />
       <div className="titles">
-        {navbarItems.map((e) => {
-          return <a href="/">{e.title}</a>;
+        {navbarItems.map((e, i) => {
+          return (
+            <a key={i} href="/">
+              {e.title}
+            </a>
+          );
         })}
       </div>
 
