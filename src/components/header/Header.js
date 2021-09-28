@@ -1,12 +1,12 @@
 import "./navbar-mobile.css";
 import "./navbar-desktop.css";
 import "./header.css";
-import logo from "../assets/logo.png";
+import logo from "../../assets/logo.png";
 
 function NavBarMobile({
   navbarItems = [],
   register = "",
-  onRegister = () => {},
+  onRegister = () => { },
 }) {
   return (
     <div className="navbar-mobile">
@@ -40,7 +40,7 @@ function NavBarMobile({
 function NavbarDesktop({
   navbarItems = [],
   register = "",
-  onRegister = () => {},
+  onRegister = () => { },
 }) {
   return (
     <div className="navbar-desktop">
@@ -80,7 +80,7 @@ function Header() {
   const props = {
     navbarItems,
     register,
-    onRegister: () => {},
+    onRegister: () => { },
   };
 
   return (

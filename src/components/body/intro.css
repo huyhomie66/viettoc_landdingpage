@@ -1,13 +1,12 @@
 .intro {
   height: 100vh;
-  width: 100vw;
-  /* z-index: -1; */
+  z-index: -1;
   background-image: url("../../assets/red.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: center;
+   align-items: center; 
   flex-direction: column;
 }
 

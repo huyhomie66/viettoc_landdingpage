@@ -1,13 +1,14 @@
+import React from "react";
 import Banner from "./Banner";
 import Intro from "./Intro";
 
 const Body = () => {
   return (
-    <div className="content">
+    <React.Fragment >
       <Banner />
       <Intro />
-    </div>
-  );
+    </React.Fragment >
+  )
 };
 
 export default Body;

@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import Header from "../components/header/Header";
 import Body from "../components/body";
 // import {
 //   getProvider,
@@ -27,7 +27,7 @@ function App() {
   // }, []);
 
   return (
-    <div className="container">
+    <div >
       <Header />
       <Body />
     </div>
