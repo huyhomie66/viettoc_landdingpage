@@ -1,31 +1,53 @@
 .intro {
-  height: 100vh;
-  z-index: -1;
+  min-width: 100vw;
   background-image: url("../../assets/red.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-  flex-direction: column;
 }
 
-.intro-block {
+.intro > div {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.block-body {
   min-height: 300px;
-  width: 978px;
+  width: 52vw;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   display: flex;
   padding-bottom: 58px;
+  z-index: 10;
 
   flex-direction: row;
   justify-content: space-evenly;
   background-color: #fff1dc;
 }
 
-.intro-block > .title {
-  min-width: 234px;
+.block-footer {
+  height: 14px;
+  width: 52vw;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #ffce87;
+}
+
+.block-container {
+  z-index: 10;
+}
+.flower {
+  z-index: 20;
+  position: absolute;
+  padding-top: 220px;
+  left: 21%;
+}
+
+.block-body > .title {
+  max-width: 234px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,17 +55,14 @@
   background-color: #003168;
 }
 
-.intro-block > .title > img {
-}
-
-.intro-block > .col {
+.block-body > .col {
   display: flex;
   flex-direction: column;
   width: 50%;
   justify-content: flex-end;
 }
 
-.intro-block > .col > p {
+.block-body > .col > p {
   max-height: 578px;
   font-family: Inter;
   font-weight: 400;
@@ -51,7 +70,7 @@
   text-align: start;
 }
 
-.intro-block > .col > button {
+.block-body > .col > button {
   border: none;
   background-color: #9e1c1e;
   height: 51px;
@@ -62,21 +81,8 @@
   border-radius: 10px;
   padding: 12px, 28px, 12px, 28px;
 }
-.block-footer {
-  height: 14px;
-  width: 978px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  background-color: #ffce87;
-}
 
-.intro > div > img {
-  position: relative;
-}
-
-
-
-.testimonial { 
+.testimonial {
   display: flex;
   flex-direction: row;
   min-width: 60vw;
@@ -88,25 +94,32 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content:space-evenly
-  
+  justify-content: space-evenly;
 }
-
 
 .testimonial > img {
   height: 90px;
-  width:  90px;
-
-  
+  width: 90px;
 }
 
-
-
-.testimonial > div > h1 {
+.testimonial > div > span {
   font-family: "Playfair Display";
   color: gold;
   font-weight: 700;
-  font-size: 64;
+  font-size: 64px;
 }
 
+.testimonial > div > p {
+  color: white;
+}
 
+.next-gen-button {
+  background-color: #ffca78;
+  color: #9e1c1e;
+  width: 290px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 18px;
+}

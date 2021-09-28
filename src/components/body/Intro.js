@@ -8,8 +8,11 @@ import React from "react";
 
 const Block = ({ description, buttonTitle }) => {
   return (
-    <div>
-      <div className="intro-block">
+    <div className="block-container">
+      <div className="flower">
+        <img alt="flower" src={flower} />
+      </div>
+      <div className="block-body">
         <div className="title">
           <img src={intro} alt="intro" />
         </div>
@@ -18,8 +21,7 @@ const Block = ({ description, buttonTitle }) => {
           <button>{buttonTitle}</button>
         </div>
       </div>
-      <div className="block-footer"></div>
-      <img alt="flower" src={flower} />
+      <div className="block-footer" />
     </div>
   );
 };
@@ -31,15 +33,14 @@ const Testimonial = ({ testimonial }) => {
         {testimonial.data.map((e) => (
           <div>
             <img src={e.icon} alt="icon" />
-            <h1>{e.count}</h1>
-            <h6>{e.title}</h6>
+            <span>{e.count}</span>
+            <p>{e.title}</p>
           </div>
         ))}
       </div>
-      <button
-        title={testimonial.button.buttonTitle}
-        onClick={testimonial.button.onClick}
-      />
+      <button className="next-gen-button" onClick={testimonial.button.onClick}>
+        {testimonial.button.title}
+      </button>
     </React.Fragment>
   );
 };
@@ -57,14 +58,16 @@ const Intro = () => {
     ],
     button: {
       title: "Trở thành dòng họ tiếp theo",
-      onClick: () => { },
+      onClick: () => {},
     },
   };
 
   return (
     <div className="intro">
-      <Block description={description} buttonTitle={buttonTitle} />
-      <Testimonial testimonial={testimonial} />
+      <div>
+        <Block description={description} buttonTitle={buttonTitle} />
+        <Testimonial testimonial={testimonial} />
+      </div>
     </div>
   );
 };
