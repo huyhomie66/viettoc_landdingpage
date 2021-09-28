@@ -1,6 +1,17 @@
 import mushroom from "mushroomjs";
+import { rootApiUrl, keySite } from '../config'
+import { load } from 'recaptcha-v3'
 
-const rootApiUrl = "http://viettoc-api.test2.siten.vn/api/viettoc/v1/";
+async function getToken() {
+  const recaptcha = await load(keySite)
+
+
+  const token = await recaptcha.execute('<action>')
+
+  console.log(token) // Will also print the token
+}
+
+
 
 mushroom._defineAsyncResource({
   name: "ldp_cau_hinh",
@@ -78,9 +89,9 @@ const getProvider = async () => {
   console.log(result);
 };
 
-const getIntro = async () => {
+const getIntro = async ({ name }) => {
   const response = await mushroom.ldp_cau_hinh.listAsync({
-    ten: "content_gioi_thieu",
+    ten: name,
   });
 
   console.log(response);
@@ -102,47 +113,59 @@ const getTestimonial = async () => {
   console.log({ testimonial });
 };
 
-const register = async () => {
+const register = async ({
+  fullName,
+  providerId,
+  districtId,
+  communeId,
+  familyName,
+  phone,
+  address,
+  vocative,
+  recaptchaToken,
+  distance,
+  email,
+}) => {
   const register = await mushroom.dong_ho?.dangKyDongHoAsync({
-    ten_dong_ho: "tên dòng họ",
-    khoang_dinh: "khoảng đinh",
-    tinh_id: "mã tỉnh",
-    huyen_id: "mã huyện",
-    xa_id: "mã xã",
-    dia_chi: "địa chỉ",
-    xung_ho: "xưng hô",
-    ho_ten: "họ và tên",
-    dien_thoai: "điện thoại",
-    email: "email",
-    recaptchaToken: "recaptcha token",
+    ten_dong_ho: familyName,
+    khoang_dinh: distance,
+    tinh_id: providerId,
+    huyen_id: districtId,
+    xa_id: communeId,
+    dia_chi: address,
+    xung_ho: vocative,
+    ho_ten: fullName,
+    dien_thoai: phone,
+    email,
+    recaptchaToken,
   });
   console.log(register);
 };
 
-const active = async () => {
+const active = async ({ phone, code, recaptchaToken }) => {
   const active = await mushroom.nguoi_dung?.kichHoatTaiKhoanAsync({
-    taiKhoan: "phone-number",
-    ma: "activation-code",
-    recaptchaToken: "recaptcha token",
+    taiKhoan: phone,
+    ma: code,
+    recaptchaToken,
   });
   console.log({ active });
 };
 
-const changePassword = async () => {
+const changePassword = async ({ password, token }) => {
   const changePassword = await mushroom.nguoi_dung?.doiMatKhauAsync({
-    matKhau: "new-password",
-    token: "token",
+    matKhau: password,
+    token,
   });
   console.log({ changePassword });
 };
 
-const sendMessage = async () => {
+const sendMessage = async ({ name, email, note, phone, recaptchaToken }) => {
   const message = await mushroom.ldp_loi_nhan.createAsync({
-    ho_ten: "họ và tên",
-    email: "email",
-    dien_thoai: "điện thoại",
-    noi_dung: "nội dung",
-    recaptchaToken: "recaptcha token",
+    ho_ten: name,
+    email,
+    dien_thoai: phone,
+    noi_dung: note,
+    recaptchaToken,
   });
 
   console.log({ message });
@@ -154,6 +177,7 @@ export {
   getIntro,
   sendMessage,
   changePassword,
+  getToken,
   getIntroCount,
   getSlide,
   getTestimonial,
