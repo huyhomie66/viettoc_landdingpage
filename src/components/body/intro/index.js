@@ -30,8 +30,8 @@ const Testimonial = ({ testimonial }) => {
   return (
     <React.Fragment>
       <div className="testimonial">
-        {testimonial.data.map((e) => (
-          <div>
+        {testimonial.data.map((e, i) => (
+          <div key={i}>
             <img src={e.icon} alt="icon" />
             <span>{e.count}</span>
             <p>{e.title}</p>
