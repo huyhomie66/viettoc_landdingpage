@@ -26,26 +26,32 @@ const PriceBanner = ({
         >
           {promotion && promotion.value}
         </button>
-        <div className="price row item-center">
-          {price && (
-            <Fragment>
-              <span className={price.className}>{price?.value}</span>
-              <h1 className={`unit ${price?.className}`}> đ</h1>
-              <p className={price?.unitClassName}>/năm</p>
-            </Fragment>
-          )}
-        </div>
 
-        <p className={title?.className}>{title?.value}</p>
+        <div
+          className="col"
+          style={{ minHeight: "200px", justifyContent: "flex-start" }}
+        >
+          <div className="price row item-center">
+            {price && (
+              <Fragment>
+                <span className={price.className}>{price?.value}</span>
+                <h1 className={`unit ${price?.className}`}> đ</h1>
+                <p className={price?.unitClassName}>/năm</p>
+              </Fragment>
+            )}
+          </div>
+
+          <h1 className={`price-title ${title?.className}`}>{title?.value}</h1>
+        </div>
 
         {description &&
           description.map((e, i) => {
             return (
               <div key={i} className="description row item-center">
                 <img src={rectangle} alt="rectangle" />
-                <div className="row item-center">
-                  <h4>{e.bold}</h4>
-                  <p>{e.normal}</p>
+                <div className="row item-center" style={{ height: 40 }}>
+                  <h4 className={e?.className}>{e.bold}</h4>
+                  <p className={e?.className}>{e.normal}</p>
                 </div>
               </div>
             );
@@ -174,10 +180,12 @@ const Price = () => {
           {
             bold: "1000 thành viên",
             normal: "trong cây gia phả",
+            className: "text-white",
           },
           {
             bold: "100 GB",
             normal: "dung lượng lưu trữ",
+            className: "text-white",
           },
         ],
         button: {
@@ -200,10 +208,12 @@ const Price = () => {
           {
             bold: "1000 thành viên",
             normal: "trong cây gia phả",
+            className: "text-white",
           },
           {
             bold: "100 GB",
             normal: "dung lượng lưu trữ",
+            className: "text-white",
           },
         ],
         button: {
