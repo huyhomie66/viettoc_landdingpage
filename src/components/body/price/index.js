@@ -4,9 +4,17 @@ import arrowRight from "../../../assets/arrow-right.png";
 import rectangle from "../../../assets/rectangle.png";
 import { Fragment } from "react";
 
-const PriceBanner = ({ price, title, description, button }) => {
+const PriceBanner = ({
+  className = "",
+  price,
+  title,
+  description,
+  button,
+  promotion,
+}) => {
   return (
-    <div className={"price-item col content-center"}>
+    <div className={`price-item col content-center ${className}`}>
+      {promotion && <button className="promotion">{promotion.value}</button>}
       <div className="price row item-center">
         {price && (
           <Fragment>
@@ -32,7 +40,7 @@ const PriceBanner = ({ price, title, description, button }) => {
           );
         })}
       {button && (
-        <button onClick={button.onClick} className={button.className}>
+        <button className="more" onClick={button.onClick}>
           {button.title}
         </button>
       )}
@@ -88,7 +96,8 @@ const Price = () => {
         },
       },
       {
-        promotion: { className: "price-normal-promotion" },
+        promotion: { value: "Phổ biến nhất" },
+
         price: "5.000.000",
         title: {
           value: "Đoàn viên",
@@ -113,6 +122,7 @@ const Price = () => {
     ],
     special: [
       {
+        className: "special-1",
         price: "15.000.000",
         title: {
           value: "ĐỒNG TÂM",
@@ -135,6 +145,7 @@ const Price = () => {
         },
       },
       {
+        className: "special-2",
         promotion: {
           value: "Phổ biến nhất",
           className: "price-special-promotion",
@@ -161,6 +172,7 @@ const Price = () => {
         },
       },
       {
+        className: "special-3",
         promotion: {
           value: "Đặc biệt",
           className: "price-special-promotion",
@@ -188,24 +200,43 @@ const Price = () => {
     ],
   };
 
-  const title = "CÁC GÓI TẠI VIỆT TỘC";
-  return (
-    <div className="price-container col item-center">
-      <div className="title row item-center">
-        <img alt="arrow-left" src={arrowLeft} />
-        <h1>{title}</h1>
-        <img alt="arrow-right" src={arrowRight} />
-      </div>
+  const BlockBackground = ({ children }) => (
+    <div className="price-bg ">
+      <div>{children}</div>
+    </div>
+  );
+
+  const Title = () => (
+    <div className="price-container-title row item-center">
+      <img alt="arrow-left" src={arrowLeft} />
+      <h1>{title}</h1>
+      <img alt="arrow-right" src={arrowRight} />
+    </div>
+  );
+
+  const Promotions = () => (
+    <Fragment>
       <div className="price-normal row">
         {price.normal.map((props, key) => (
           <PriceBanner {...props} key={key} />
         ))}
       </div>
-      <div className="price-special row">
-        {price.special.map((props, key) => (
-          <PriceBanner {...props} key={key} />
-        ))}
+      <div className="price-special">
+        <div className="row">
+          {price.special.map((props, key) => (
+            <PriceBanner {...props} key={key} />
+          ))}
+        </div>
       </div>
+    </Fragment>
+  );
+
+  const title = "CÁC GÓI TẠI VIỆT TỘC";
+
+  return (
+    <div className="price-container  col item-center">
+      <Title />
+      <Promotions />
     </div>
   );
 };

@@ -4,18 +4,18 @@
   background-image: url("../../../assets/wheat.png");
   background-repeat: no-repeat;
   background-size: cover;
-  justify-content: space-around;
   background-position: center;
+  justify-content: space-evenly;
 }
 
 .price-banner {
 }
 
-.price-container > .title {
+.price-container-title {
   justify-content: space-around;
   width: 60%;
 }
-.price-container > .title > h1 {
+.price-container-title > h1 {
   font-family: "Playfair Display";
   font-style: normal;
   font-weight: bold;
@@ -24,7 +24,7 @@
   color: #9e1c1e;
 }
 
-.price-container > .title > img {
+.price-container-title > img {
   min-width: 146.51px;
   height: 10px;
 }
@@ -42,7 +42,21 @@
   color: hsla(359, 70%, 37%, 1);
   font-family: "Playfair Display";
 }
-.price-item > button {
+
+.promotion {
+  border: none;
+  background-color: hsla(36, 100%, 93%, 1);
+  border-radius: 13.5px;
+  color: hsla(359, 70%, 36%, 1);
+  max-width: 200px;
+  min-height: 17px;
+  font-size: 14px;
+  align-self: flex-end;
+  line-height: 17px;
+  padding: 6.5px 16px 6.5px 16px;
+}
+
+.more {
   background-color: #ffca78;
   border: none;
   height: 48px;
@@ -63,6 +77,14 @@
   border-radius: 20px;
 }
 
+.price-item:hover {
+  transform: scale(1.1);
+  -webkit-box-shadow: 1px 6px 15px 6px rgba(0, 0, 0, 0.11);
+  box-shadow: 1px 6px 15px 6px rgba(0, 0, 0, 0.11);
+  border: #ffca78 solid;
+  border-width: 4px;
+}
+
 .price > .unit {
   text-decoration: underline;
 }
@@ -78,11 +100,37 @@
 }
 
 .price-normal {
-  width: 60%;
+  padding: 80px;
+  width: 70%;
   justify-content: space-around;
 }
 
 .price-special {
-  width: 60%;
+  width: 80vw;
+  border-radius: 21px;
+
+  padding: 80px;
+  background-color: hsla(36, 74%, 81%, 1);
+  width: 70%;
+}
+
+.price-special > .row {
   justify-content: space-around;
+}
+
+.special-1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../../assets/wheat-price.png");
+}
+.special-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../../assets/blue-price.png");
+}
+
+.special-3 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../../assets/red-price.png");
 }
