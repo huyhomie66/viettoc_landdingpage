@@ -12,7 +12,7 @@
 }
 
 .price-container-title {
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 60%;
 }
 .price-container-title > h1 {
@@ -38,9 +38,41 @@
   width: 6px;
 }
 
-.price-item > h1 {
+.price-item > p {
   color: hsla(359, 70%, 37%, 1);
   font-family: "Playfair Display";
+  background-color: transparent;
+  font-size: 36px;
+  padding: 10px;
+}
+
+.price-item {
+  margin: 10px;
+  height: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-width: 3px;
+}
+.price-special > .row > .price-item-bg > .price-item {
+  border: #ffca78 solid;
+}
+
+.price-item-bg {
+  background-color: white;
+  border-radius: 20px;
+  min-width: 308px;
+  height: 480px;
+}
+
+.price-item-bg:hover {
+  transform: scale(1.1);
+  -webkit-box-shadow: 1px 6px 15px 6px rgba(0, 0, 0, 0.11);
+  box-shadow: 1px 6px 15px 6px rgba(0, 0, 0, 0.11);
+  border: #ffca78 solid;
+  border-width: 2px;
 }
 
 .promotion {
@@ -68,23 +100,6 @@
   align-self: flex-end;
 }
 
-.price-item {
-  min-width: 308px;
-  min-height: 480px;
-  padding-left: 30px;
-  padding-right: 30px;
-  background: #ffffff;
-  border-radius: 20px;
-}
-
-.price-item:hover {
-  transform: scale(1.1);
-  -webkit-box-shadow: 1px 6px 15px 6px rgba(0, 0, 0, 0.11);
-  box-shadow: 1px 6px 15px 6px rgba(0, 0, 0, 0.11);
-  border: #ffca78 solid;
-  border-width: 4px;
-}
-
 .price > .unit {
   text-decoration: underline;
 }
@@ -102,35 +117,46 @@
 .price-normal {
   padding: 80px;
   width: 70%;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
+.price-title-special {
+  border-radius: 10px;
+  font-family: "Playfair Display";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+  text-align: center;
+
+  background-color: #fed9b7 !important;
+}
 .price-special {
   width: 80vw;
   border-radius: 21px;
-
-  padding: 80px;
-  background-color: hsla(36, 74%, 81%, 1);
+  padding: 20px;
+  background: hsla(36, 74%, 81%, 1);
   width: 70%;
 }
 
 .price-special > .row {
-  justify-content: space-around;
+  justify-content: space-evenly;
+  border: #ffca78 solid;
+  border-width: 4px;
+  border-radius: 20px;
+  padding: 80px;
 }
 
 .special-1 {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("../../../assets/wheat-price.png");
+  background-color: hsla(36, 100%, 93%, 1);
 }
 .special-2 {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("../../../assets/blue-price.png");
+  background-color: hsla(212, 100%, 20%, 1);
 }
 
 .special-3 {
-  background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("../../../assets/red-price.png");
+  background-image: url("../../../assets/mask.png");
+  background-color: hsla(359, 70%, 36%, 1);
 }

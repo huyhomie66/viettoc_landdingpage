@@ -25,6 +25,14 @@ body {
   align-items: center;
 }
 
+.text-white {
+  color: white;
+}
+
+.text-gold {
+  color: hsla(36, 100%, 74%, 1) !important;
+}
+
 .content-center {
   display: flex;
   justify-content: center;

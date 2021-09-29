@@ -12,38 +12,50 @@ const PriceBanner = ({
   button,
   promotion,
 }) => {
+  console.log(title);
   return (
-    <div className={`price-item col content-center ${className}`}>
-      {promotion && <button className="promotion">{promotion.value}</button>}
-      <div className="price row item-center">
-        {price && (
-          <Fragment>
-            <span>{price}</span>
-            <h1 className="unit">đ</h1>
-            <p>/năm</p>
-          </Fragment>
+    <div className={`price-item-bg col content-center ${className}`}>
+      <div className={`price-item`}>
+        <button
+          className="promotion"
+          style={{
+            backgroundColor: promotion
+              ? "hsla(36, 100%, 93%, 1)"
+              : "transparent",
+          }}
+        >
+          {promotion && promotion.value}
+        </button>
+        <div className="price row item-center">
+          {price && (
+            <Fragment>
+              <span className={price.className}>{price?.value}</span>
+              <h1 className={`unit ${price?.className}`}> đ</h1>
+              <p className={price?.unitClassName}>/năm</p>
+            </Fragment>
+          )}
+        </div>
+
+        <p className={title?.className}>{title?.value}</p>
+
+        {description &&
+          description.map((e, i) => {
+            return (
+              <div key={i} className="description row item-center">
+                <img src={rectangle} alt="rectangle" />
+                <div className="row item-center">
+                  <h4>{e.bold}</h4>
+                  <p>{e.normal}</p>
+                </div>
+              </div>
+            );
+          })}
+        {button && (
+          <button className="more" onClick={button.onClick}>
+            {button.title}
+          </button>
         )}
       </div>
-
-      <h1>{title?.value}</h1>
-
-      {description &&
-        description.map((e, i) => {
-          return (
-            <div key={i} className="description row item-center">
-              <img src={rectangle} alt="rectangle" />
-              <div className="row item-center">
-                <h4>{e.bold}</h4>
-                <p>{e.normal}</p>
-              </div>
-            </div>
-          );
-        })}
-      {button && (
-        <button className="more" onClick={button.onClick}>
-          {button.title}
-        </button>
-      )}
     </div>
   );
 };
@@ -52,7 +64,7 @@ const Price = () => {
   const price = {
     normal: [
       {
-        price: "0",
+        price: { value: "0" },
         title: {
           value: "Khởi đầu",
           className: "price-normal-title",
@@ -74,7 +86,7 @@ const Price = () => {
         },
       },
       {
-        price: "4.000.000",
+        price: { value: "4.000.000" },
         title: {
           value: "Cơ bản",
           className: "price-normal-title",
@@ -98,7 +110,7 @@ const Price = () => {
       {
         promotion: { value: "Phổ biến nhất" },
 
-        price: "5.000.000",
+        price: { value: "5.000.000" },
         title: {
           value: "Đoàn viên",
           className: "price-normal-title",
@@ -123,10 +135,9 @@ const Price = () => {
     special: [
       {
         className: "special-1",
-        price: "15.000.000",
+        price: { value: "15.000.000" },
         title: {
           value: "ĐỒNG TÂM",
-          className: "price-special-title",
         },
         description: [
           {
@@ -150,10 +161,14 @@ const Price = () => {
           value: "Phổ biến nhất",
           className: "price-special-promotion",
         },
-        price: "50.000.000",
+        price: {
+          value: "50.000.000",
+          className: "text-gold",
+          unitClassName: "text-white",
+        },
         title: {
           value: "THỊNH VƯỢNG",
-          className: "price-special-title",
+          className: "text-gold",
         },
         description: [
           {
@@ -179,7 +194,7 @@ const Price = () => {
         },
         title: {
           value: "BẢN SẮC",
-          className: "price-special-title",
+          className: "price-title-special",
         },
         description: [
           {
@@ -199,12 +214,6 @@ const Price = () => {
       },
     ],
   };
-
-  const BlockBackground = ({ children }) => (
-    <div className="price-bg ">
-      <div>{children}</div>
-    </div>
-  );
 
   const Title = () => (
     <div className="price-container-title row item-center">
