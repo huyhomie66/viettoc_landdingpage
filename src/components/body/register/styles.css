@@ -6,3 +6,41 @@
   background-size: cover;
   background-position: center;
 }
+
+.modal {
+  width: 50vw;
+  height: 60vh;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.modal-head {
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.modal-head > img {
+  height: 14px;
+  width: 7px;
+}
+
+.modal > button {
+  min-height: 48px;
+  border-radius: 8px;
+  min-width: 70%;
+  align-self: center;
+  background-color: #9e1c1e;
+  padding: 16px, 147px, 16px, 147px;
+  font-family: "Inter";
+  font-size: 18px;
+  color: white;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+.modal-head > h4 {
+  color: #a5a5a5;
+}
