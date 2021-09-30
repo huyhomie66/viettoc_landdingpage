@@ -9,7 +9,6 @@
 
 .modal {
   width: 50vw;
-  height: 60vh;
   background-color: white;
   border-radius: 20px;
 }
@@ -25,10 +24,13 @@
   width: 7px;
 }
 
-.modal > button {
+.submit {
   min-height: 48px;
   border-radius: 8px;
-  min-width: 70%;
+  width: 100%;
+  margin-bottom: 5vh;
+  margin-top: 2vh;
+  border: none;
   align-self: center;
   background-color: #9e1c1e;
   padding: 16px, 147px, 16px, 147px;
@@ -40,7 +42,38 @@
   line-height: 27px;
   letter-spacing: 0.03em;
   text-align: center;
+  cursor: pointer;
 }
+
+.form {
+  width: 70%;
+  height: 80%;
+  align-self: center;
+  justify-content: space-around;
+}
+
+.frame {
+  width: 70%;
+  align-self: center;
+}
+
 .modal-head > h4 {
   color: #a5a5a5;
+}
+
+.modal > .title {
+  align-self: center;
+  font-family: "Playfair Display";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+  text-align: left;
+}
+
+.modal > .description {
+  text-align: center;
+  align-self: center;
+  max-width: 40vh;
 }

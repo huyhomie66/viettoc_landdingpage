@@ -4,6 +4,7 @@ import Intro from "./intro";
 import FamilyBanner from "./family-banner";
 import Price from "./price";
 import Register from "./register";
+import Contact from "./contact";
 
 const Body = () => {
   return (
@@ -13,6 +14,7 @@ const Body = () => {
       <FamilyBanner />
       <Price />
       <Register />
+      <Contact />
     </React.Fragment>
   );
 };

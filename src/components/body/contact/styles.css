@@ -1,0 +1,42 @@
+.contact {
+  width: 100vw;
+  height: 120vh;
+  background-image: url("../../../assets/deco.png");
+  z-index: 100;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.message-block {
+}
+
+.contact-block {
+  z-index: -1;
+  width: 60%;
+  height: 100%;
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+
+  background: hsla(36, 100%, 93%, 1);
+}
+
+.contact-form > h1 {
+  font-family: "Playfair Display";
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  align-self: flex-start;
+}
+
+.contact-form > p {
+  font-family: Playfair Display;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0.03em;
+  text-align: left;
+}

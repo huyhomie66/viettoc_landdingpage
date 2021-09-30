@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./styles.css";
 import back from "../../../assets/back.png";
+import happyFamily from "../../../assets/happy-family.png";
+import Fields from "../../Fields";
 
 const Modal = ({ children }) => {
   return <div className="modal col  ">{children}</div>;
@@ -19,12 +21,30 @@ const steps = [
   },
   {
     title: "Khởi tạo tài khoản dòng họ",
-
     fields: [
-      { name: "provider", label: "Tỉnh" },
-      { name: "district", label: "Huyện" },
-      { name: "commune", label: "Xã" },
-      { name: "address_detail", label: "Địa chỉ chi tiết" },
+      {
+        type: "select",
+        label: "Tỉnh",
+        name: "provider",
+        selectData: [{ value: "", text: "" }],
+      },
+      {
+        type: "select",
+        label: "Huyện",
+        name: "provider",
+        selectData: [{ value: "", text: "" }],
+      },
+      {
+        type: "select",
+        label: "Xã",
+        name: "provider",
+        selectData: [{ value: "", text: "" }],
+      },
+      {
+        label: "Địa chỉ chi tiết",
+        name: "address_detail",
+        selectData: [{ value: "", text: "" }],
+      },
     ],
     next: "Tiếp theo",
   },
@@ -33,11 +53,12 @@ const steps = [
     fields: [
       { name: "full_name", label: "Họ và tên" },
       { name: "phone", label: "Số điện thoại" },
-      { name: "email", label: "Email" },
+      { name: "email", label: "Email", type: "select", selectData: [] },
     ],
     next: "Hoàn tất đăng ký",
   },
   {
+    frame: happyFamily,
     title: "Đăng ký thành công",
     description:
       "Cho phép người dùng thay đổi số điện thoại và email để đăng ký tài khoản khác.",
@@ -48,14 +69,38 @@ const steps = [
 
 const Register = () => {
   const [currentStep, setStep] = useState(0);
+
+  const onSubmit = (e) => {
+    console.log(e);
+    if (currentStep !== steps.length) {
+      setStep(currentStep + 1);
+    }
+
+    e.preventDefault();
+  };
+
   return (
     <div className="register-banner col item-center content-center ">
       <Modal>
         <div className="row modal-head item-center">
           <img src={back} alt="back" /> <h4>Bước {currentStep}/3</h4>
         </div>
-
-        <button>{steps[currentStep].next}</button>
+        {steps[currentStep].frame && (
+          <img alt="frame" src={steps[currentStep].frame} className="frame" />
+        )}
+        <h1 className="title redPlum"> {steps[currentStep].title} </h1>
+        {steps[currentStep].description && (
+          <p className="description"> {steps[currentStep].description}</p>
+        )}
+        <form
+          onSubmit={onSubmit}
+          className="form content-around  col item-center"
+        >
+          <Fields fields={steps[currentStep].fields} />
+          <button type="submit" className="submit">
+            {steps[currentStep].next}
+          </button>
+        </form>
       </Modal>
     </div>
   );

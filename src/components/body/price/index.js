@@ -171,7 +171,6 @@ const PriceBanner = ({
   button,
   promotion,
 }) => {
-  console.log(title);
   return (
     <div className={`price-item-bg col content-center ${className}`}>
       <div className={`price-item`}>
@@ -200,7 +199,9 @@ const PriceBanner = ({
             )}
           </div>
 
-          <h1 className={`price-title ${title?.className}`}>{title?.value}</h1>
+          <h1 className={`price-title ${title?.className} redPlum`}>
+            {title?.value}
+          </h1>
         </div>
 
         {description &&
