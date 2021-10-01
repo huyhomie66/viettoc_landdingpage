@@ -9,6 +9,11 @@
 }
 
 .message-block {
+  z-index: -1;
+  height: 100%;
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .contact-block {
@@ -22,7 +27,7 @@
   background: hsla(36, 100%, 93%, 1);
 }
 
-.contact-form > h1 {
+.contact-title {
   font-family: "Playfair Display";
   font-size: 44px;
   font-style: normal;
@@ -39,4 +44,10 @@
   line-height: 25px;
   letter-spacing: 0.03em;
   text-align: left;
+}
+
+.contact-intro {
+  background: hsla(212, 100%, 20%, 1);
+  width: 100vw;
+  height: 30vh;
 }

@@ -1,0 +1,8 @@
+footer {
+  background: hsla(212, 90%, 28%, 1);
+  height: 8vh;
+}
+
+footer > p {
+  color: hsla(36, 100%, 74%, 1);
+}
