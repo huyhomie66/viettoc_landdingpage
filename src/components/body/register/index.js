@@ -3,8 +3,7 @@ import "./styles.css";
 import back from "../../../assets/back.png";
 import happyFamily from "../../../assets/happy-family.png";
 import Fields from "../../Fields";
-import Modal from './Modal'
-
+import Modal from "./Modal";
 
 const steps = [
   {
@@ -69,18 +68,23 @@ const Register = () => {
   const [currentStep, setStep] = useState(0);
 
   const onSubmit = (e) => {
-    console.log(e);
-    if (currentStep !== steps.length) {
+    if (currentStep < 3) {
       setStep(currentStep + 1);
     }
 
     e.preventDefault();
   };
 
+  const onbBack = () => {
+    if (currentStep > 0) {
+      setStep(currentStep - 1);
+    }
+  };
+
   return (
     <div className="register-banner col item-center content-center ">
       <Modal>
-        <div className="row modal-head item-center" onClick={() => setStep(currentStep - 1)}>
+        <div className="row modal-head item-center" onClick={onbBack}>
           <img src={back} alt="back" /> <h4>Bước {currentStep}/3</h4>
         </div>
         {steps[currentStep].frame && (

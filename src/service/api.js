@@ -1,14 +1,13 @@
 import mushroom from "mushroomjs";
-import { rootApiUrl, keySite } from '../config'
-import { load } from 'recaptcha-v3'
+import { rootApiUrl, keySite } from "../config";
+import { load } from "recaptcha-v3";
 
 async function getToken() {
-  const recaptcha = await load(keySite)
+  const recaptcha = await load(keySite);
 
+  const token = await recaptcha.execute("<action>");
 
-  const token = await recaptcha.execute('<action>')
-
-  console.log(token) // Will also print the token
+  console.log(token); // Will also print the token
 }
 
 mushroom._defineAsyncResource({
@@ -82,17 +81,17 @@ mushroom._defineAsyncResource({
 
 mushroom.$using(rootApiUrl);
 
-const getImages = async (ids = []) => {
-  const result = await mushroom.$file?.zip(ids);
-  return result
-}
+const getImages = async (ids) => {
+  const result = await mushroom.$file.download(ids);
+  return result;
+};
 
 const getProvider = async () => {
   const result = await mushroom.province.listAsync();
   console.log(result);
 };
 
-const getIntro = async (name = '') => {
+const getIntro = async (name = "") => {
   const response = await mushroom.ldp_cau_hinh.listAsync({
     ten: name,
   });
@@ -107,7 +106,7 @@ const getIntroCount = async () => {
 
 const getSlide = async () => {
   const slide = await mushroom.ldp_slide.listAsync();
-  return slide
+  return slide;
 };
 
 const getTestimonial = async () => {
@@ -116,17 +115,17 @@ const getTestimonial = async () => {
 };
 
 const register = async ({
-  fullName = '',
-  providerId = '',
-  districtId = '',
-  communeId = '',
-  familyName = ' ',
-  phone = '',
-  address = '',
-  vocative = ' ',
-  recaptchaToken = '',
-  distance = ' ',
-  email = '',
+  fullName = "",
+  providerId = "",
+  districtId = "",
+  communeId = "",
+  familyName = " ",
+  phone = "",
+  address = "",
+  vocative = " ",
+  recaptchaToken = "",
+  distance = " ",
+  email = "",
 }) => {
   const register = await mushroom.dong_ho?.dangKyDongHoAsync({
     ten_dong_ho: familyName,

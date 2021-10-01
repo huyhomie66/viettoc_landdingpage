@@ -45,7 +45,7 @@ function NavbarDesktop({
   return (
     <div className="navbar-desktop">
       <img alt="logo" src={logo} />
-      <div className="titles">
+      <nav className="titles nav">
         {navbarItems.map((e, i) => {
           return (
             <a key={i} href="/">
@@ -53,7 +53,7 @@ function NavbarDesktop({
             </a>
           );
         })}
-      </div>
+      </nav>
 
       <button
         className="register"

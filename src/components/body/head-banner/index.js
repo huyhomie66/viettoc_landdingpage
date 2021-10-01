@@ -1,6 +1,6 @@
 import "./styles.css";
 import logo from "../../../assets/logo.png";
-import { getImages, getSlide } from '../../../service/api'
+import { getImages, getSlide } from "../../../service/api";
 import { useEffect } from "react";
 
 const Banner = () => {
@@ -9,14 +9,17 @@ const Banner = () => {
     "Ứng dụng về dòng họ đầu tiên tại Việt Nam với sứ mệnh kết nối và bảo tồn văn hóa dòng họ truyền thống của người Việt.";
 
   async function init() {
-    const slide = await getSlide()
-    const images = await getImages(slide?.result)
-    console.log({ images });
+    const slide = await getSlide();
+
+    const images = await Promise.all(
+      slide.result.map((e) => getImages(e.anh_id))
+    );
+    console.log({ slide, images });
   }
 
   useEffect(() => {
-    init()
-  }, [])
+    init();
+  }, []);
 
   return (
     <div className="banner col item-center">
