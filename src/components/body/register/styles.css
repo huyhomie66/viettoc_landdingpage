@@ -1,5 +1,5 @@
 .register-banner {
-  min-width: 100vw;
+  width: 100vw;
   height: 100vh;
   background-image: url("../../../assets/tet.png");
   background-repeat: no-repeat;
@@ -8,7 +8,9 @@
 }
 
 .modal {
-  width: 50vw;
+  min-width: 40vw;
+  padding-top: 2vh;
+  padding-bottom: 5vh;
   background-color: white;
   border-radius: 20px;
 }
@@ -28,7 +30,6 @@
   min-height: 48px;
   border-radius: 8px;
   width: 100%;
-  margin-bottom: 5vh;
   margin-top: 2vh;
   border: none;
   align-self: center;

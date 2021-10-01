@@ -1,6 +1,6 @@
 .contact {
   width: 100vw;
-  height: 120vh;
+  height: 100vh;
   background-image: url("../../../assets/deco.png");
   z-index: 100;
   background-repeat: no-repeat;
@@ -11,7 +11,7 @@
 .message-block {
   z-index: -1;
   height: 100%;
-  padding-top: 10%;
+  padding-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -20,7 +20,7 @@
   z-index: -1;
   width: 60%;
   height: 100%;
-  padding-top: 10%;
+  padding-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
 

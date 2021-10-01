@@ -8,8 +8,6 @@ import logo from "../../../assets/logo.png";
 import mailWhite from "../../../assets/mail-white.png";
 import phoneWhite from "../../../assets/phone-white.png";
 import locationWhite from "../../../assets/location-white.png";
-import youtube from "../../../assets/youtube.png";
-import zalo from "../../../assets/zalo.png";
 import youtubeWhite from "../../../assets/youtube-white.png";
 import zaloWhite from "../../../assets/zalo-white.png";
 import facebookWhite from "../../../assets/facebook-white.png";

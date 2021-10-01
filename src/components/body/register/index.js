@@ -3,10 +3,8 @@ import "./styles.css";
 import back from "../../../assets/back.png";
 import happyFamily from "../../../assets/happy-family.png";
 import Fields from "../../Fields";
+import Modal from './Modal'
 
-const Modal = ({ children }) => {
-  return <div className="modal col  ">{children}</div>;
-};
 
 const steps = [
   {
@@ -82,7 +80,7 @@ const Register = () => {
   return (
     <div className="register-banner col item-center content-center ">
       <Modal>
-        <div className="row modal-head item-center">
+        <div className="row modal-head item-center" onClick={() => setStep(currentStep - 1)}>
           <img src={back} alt="back" /> <h4>Bước {currentStep}/3</h4>
         </div>
         {steps[currentStep].frame && (
