@@ -93,7 +93,7 @@ const price = {
             ],
             button: {
                 title: "Xem thêm",
-                className: "price-special-title",
+                className: "see-more-redPlum",
                 onClick: () => { },
             },
         },

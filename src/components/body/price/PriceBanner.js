@@ -56,7 +56,7 @@ const PriceBanner = ({
                         );
                     })}
                 {button && (
-                    <button className="more" onClick={button.onClick}>
+                    <button className={`see-more ${button.className}`} onClick={button.onClick}>
                         {button.title}
                     </button>
                 )}
