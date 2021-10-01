@@ -16,17 +16,17 @@ import {
 import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    getProvider();
-    getIntro();
-    getIntroCount();
-    getSlide();
-    getTestimonial();
-    register({});
-    changePassword({});
-    active({});
-    sendMessage({});
-  }, []);
+  // useEffect(() => {
+  //   getProvider();
+  //   getIntro();
+  //   getIntroCount();
+  //   getSlide();
+  //   getTestimonial();
+  //   register({});
+  //   changePassword({});
+  //   active({});
+  //   sendMessage({});
+  // }, []);
 
   return (
     <div>

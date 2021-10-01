@@ -15,8 +15,8 @@ const FormInput = ({ className, label, error, children }) => {
 const Fields = ({ fields = [] }) => {
   return (
     <Fragment>
-      {fields.map((e) => (
-        <FormInput label={e.label}>
+      {fields.map((e, i) => (
+        <FormInput label={e.label} key={i}>
           {e.type === "select" ? (
             <select name={e.name} placeholder="" className="select">
               {e.selectData.map((o) => (

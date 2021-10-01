@@ -11,8 +11,6 @@ async function getToken() {
   console.log(token) // Will also print the token
 }
 
-
-
 mushroom._defineAsyncResource({
   name: "ldp_cau_hinh",
   actions: {
@@ -84,6 +82,11 @@ mushroom._defineAsyncResource({
 
 mushroom.$using(rootApiUrl);
 
+const getImages = async (ids = []) => {
+  const result = await mushroom.$file?.zip(ids);
+  return result
+}
+
 const getProvider = async () => {
   const result = await mushroom.province.listAsync();
   console.log(result);
@@ -99,13 +102,12 @@ const getIntro = async (name = '') => {
 
 const getIntroCount = async () => {
   const response = await mushroom.ldp_thong_ke?.views?.chi_so_phat_trien();
-
   console.log(response);
 };
 
 const getSlide = async () => {
   const slide = await mushroom.ldp_slide.listAsync();
-  console.log({ slide });
+  return slide
 };
 
 const getTestimonial = async () => {
@@ -182,4 +184,5 @@ export {
   getSlide,
   getTestimonial,
   register,
+  getImages,
 };

@@ -26,8 +26,9 @@ const MessageBlock = () => {
     <div className="col message-block">
       <h1 className="contact-title ">Liên hệ</h1>
 
-      {contacts.map((e) => (
+      {contacts.map((e, i) => (
         <div
+          key={i}
           className="row item-center "
           style={{
             marginBottom: "20px",
@@ -109,8 +110,8 @@ const Info = () => {
           },
           { icon: mailWhite, text: "xinchao@viettoc.com.vn" },
           { icon: phoneWhite, text: "(024) 626 024 57" },
-        ].map((e) => (
-          <div className="row item-center">
+        ].map((e, i) => (
+          <div className="row item-center" key={i}>
             <img alt="icon" src={e.icon} className="pd-right-30" />
             <p className="text-white ">{e.text}</p>
           </div>
@@ -119,18 +120,18 @@ const Info = () => {
       <div className="col content-between">
         <h1 className="text-gold">CÔNG TY CP VIỆT TỘC</h1>
 
-        {["Trang chủ", "Chính sách", "Bài viết", "Liên hệ"].map((e) => (
-          <p className="text-white">{e}</p>
+        {["Trang chủ", "Chính sách", "Bài viết", "Liên hệ"].map((e, i) => (
+          <p className="text-white" key={i}>{e}</p>
         ))}
       </div>
       <div className="col content-between">
         <h1 className="text-gold">Liên hệ</h1>
-        {["Đăng ký", "Follow Us"].map((e) => (
-          <p className="text-white">{e}</p>
+        {["Đăng ký", "Follow Us"].map((e, i) => (
+          <p key={i} className="text-white">{e}</p>
         ))}
         <div className="row item-center content-around">
-          {[zaloWhite, facebookWhite, youtubeWhite].map((e) => (
-            <img alt="icon" src={e} style={{ height: 20, width: 20 }} />
+          {[zaloWhite, facebookWhite, youtubeWhite].map((e, i) => (
+            <img alt="icon" src={e} style={{ height: 20, width: 20 }} key={i} />
           ))}
         </div>
       </div>
