@@ -46,8 +46,15 @@
   text-align: left;
 }
 
-.contact-intro {
+.contact-info {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
   background: hsla(212, 100%, 20%, 1);
   width: 100vw;
-  height: 30vh;
+  height: 50vh;
+}
+
+
+.contact-info  > div> h1 {
+  /* color: ; */
 }

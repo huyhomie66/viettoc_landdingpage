@@ -89,7 +89,7 @@ const getProvider = async () => {
   console.log(result);
 };
 
-const getIntro = async ({ name }) => {
+const getIntro = async (name = '') => {
   const response = await mushroom.ldp_cau_hinh.listAsync({
     ten: name,
   });
@@ -114,17 +114,17 @@ const getTestimonial = async () => {
 };
 
 const register = async ({
-  fullName,
-  providerId,
-  districtId,
-  communeId,
-  familyName,
-  phone,
-  address,
-  vocative,
-  recaptchaToken,
-  distance,
-  email,
+  fullName = '',
+  providerId = '',
+  districtId = '',
+  communeId = '',
+  familyName = ' ',
+  phone = '',
+  address = '',
+  vocative = ' ',
+  recaptchaToken = '',
+  distance = ' ',
+  email = '',
 }) => {
   const register = await mushroom.dong_ho?.dangKyDongHoAsync({
     ten_dong_ho: familyName,

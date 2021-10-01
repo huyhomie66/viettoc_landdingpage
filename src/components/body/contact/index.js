@@ -10,6 +10,10 @@ import phoneWhite from "../../../assets/phone-white.png";
 import locationWhite from "../../../assets/location-white.png";
 import youtube from "../../../assets/youtube.png";
 import zalo from "../../../assets/zalo.png";
+import youtubeWhite from "../../../assets/youtube-white.png";
+import zaloWhite from "../../../assets/zalo-white.png";
+import facebookWhite from "../../../assets/facebook-white.png";
+
 
 import React from "react";
 
@@ -68,7 +72,7 @@ const ContactBlock = () => {
       type: "text-area",
     },
   ];
-  const onSubmit = () => {};
+  const onSubmit = () => { };
 
   return (
     <div className="col contact-block">
@@ -93,38 +97,41 @@ const ContactBlock = () => {
 
 const Info = () => {
   return (
-    <div className="row contact-intro content-around">
+    <div className="row contact-info content-around">
       <div className="col content-between">
         <img alt="logo" src={logo} />
-        <h4>GIA TỘC ĐOÀN VIÊN</h4>
-      </div>
-      <div className="col content-around">
-        <h3>CÔNG TY CP VIỆT TỘC</h3>
-        <div className="row item-center content-between">
-          <img alt="icon" src={locationWhite} />
-          <p>Số 1 Nguyễn Thị Duệ, Yên Hòa, Cầu Giấy, Hà Nội</p>
-        </div>
-        <div className="row item-center content-between">
-          <img alt="icon" src={mailWhite} />
-          <p>xinchao@viettoc.com.vn</p>
-        </div>
-        <div className="row item-center content-between">
-          <img alt="icon" src={phoneWhite} />
-          <p>(024) 626 024 57</p>
-        </div>
+        <h3 className="text-white">GIA TỘC ĐOÀN VIÊN</h3>
       </div>
       <div className="col content-between">
-        <h3>CÔNG TY CP VIỆT TỘC</h3>
-        <p>Trang chủ</p>
-        <p>Chính sách</p>
-        <p>Bài viết</p>
-        <p>Liên hệ</p>
+        <h1 className="text-gold">CÔNG TY CP VIỆT TỘC</h1>
+        {[
+          {
+            icon: locationWhite,
+            text: "Số 1 Nguyễn Thị Duệ, Yên Hòa, Cầu Giấy, Hà Nội",
+          },
+          { icon: mailWhite, text: "xinchao@viettoc.com.vn" },
+          { icon: phoneWhite, text: "(024) 626 024 57" },
+        ].map((e) => (
+          <div className="row item-center">
+            <img alt="icon" src={e.icon} className="pd-right-30" />
+            <p className="text-white ">{e.text}</p>
+          </div>
+        ))}
       </div>
       <div className="col content-between">
-        <p>Đăng ký</p>
-        <p>Follow Us</p>
+        <h1 className="text-gold">CÔNG TY CP VIỆT TỘC</h1>
+
+        {["Trang chủ", "Chính sách", "Bài viết", "Liên hệ"].map((e) => (
+          <p className="text-white">{e}</p>
+        ))}
+      </div>
+      <div className="col content-between">
+        <h1 className="text-gold">Liên hệ</h1>
+        {["Đăng ký", "Follow Us"].map((e) => (
+          <p className="text-white">{e}</p>
+        ))}
         <div className="row item-center content-around">
-          {[zalo, facebook, youtube].map((e) => (
+          {[zaloWhite, facebookWhite, youtubeWhite].map((e) => (
             <img alt="icon" src={e} style={{ height: 20, width: 20 }} />
           ))}
         </div>
