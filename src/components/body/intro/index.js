@@ -1,49 +1,12 @@
 import "./styles.css";
-import intro from "../../../assets/intro.png";
-import flower from "../../../assets/flower.png";
 import hat from "../../../assets/hat.png";
 import vietnam from "../../../assets/vietnam.png";
 import comeinand from "../../../assets/comeinand.png";
+import Testimonial from './Testimonial'
+import Block from './Block'
+
 import React from "react";
 
-const Block = ({ description, buttonTitle }) => {
-  return (
-    <div className="block-container">
-      <div className="flower">
-        <img alt="flower" src={flower} />
-      </div>
-      <div className="block-body row">
-        <div className="title col item-center content-center">
-          <img src={intro} alt="intro" />
-        </div>
-        <div className="col">
-          <p>{description}</p>
-          <button>{buttonTitle}</button>
-        </div>
-      </div>
-      <div className="block-footer" />
-    </div>
-  );
-};
-
-const Testimonial = ({ testimonial }) => {
-  return (
-    <React.Fragment>
-      <div className="testimonial row ">
-        {testimonial.data.map((e, i) => (
-          <div key={i} className="col item-center">
-            <img src={e.icon} alt="icon" />
-            <span>{e.count}</span>
-            <p>{e.title}</p>
-          </div>
-        ))}
-      </div>
-      <button className="next-gen-button" onClick={testimonial.button.onClick}>
-        {testimonial.button.title}
-      </button>
-    </React.Fragment>
-  );
-};
 
 const Intro = () => {
   const description =
@@ -58,7 +21,7 @@ const Intro = () => {
     ],
     button: {
       title: "Trở thành dòng họ tiếp theo",
-      onClick: () => {},
+      onClick: () => { },
     },
   };
 

@@ -1,10 +1,13 @@
 .intro {
   min-width: 100vw;
-  height: 100vh;
+  max-height: 140vh;
   background-image: url("../../../assets/red.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  padding-bottom: 10vh;
+  padding-top: 10vh;
+
 }
 
 .intro > div {
