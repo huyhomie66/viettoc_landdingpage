@@ -1,26 +1,30 @@
 import "./styles.css";
 import logo from "../../../assets/logo.png";
 import { getImages, getSlide } from "../../../service/api";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import Slider from "../../../components/slider";
 
 const Banner = () => {
   const title = "GIA TỘC ĐOÀN VIÊN";
   const description =
     "Ứng dụng về dòng họ đầu tiên tại Việt Nam với sứ mệnh kết nối và bảo tồn văn hóa dòng họ truyền thống của người Việt.";
 
+  const [listImage, setListImage] = useState();
+
   async function init() {
     const slide = await getSlide();
-
-    const images = await Promise.all(
-      slide.result.map((e) => getImages(e.anh_id))
+    const imageResult = await Promise.all(
+      slide.result.map((e) => e.anh_id && getImages(e.anh_id))
     );
-    console.log({ slide, images });
+    setListImage(imageResult.filter((e) => !!e));
   }
 
   useEffect(() => {
     init();
   }, []);
 
+  console.log();
   return (
     <div className="banner col item-center">
       <div className="banner-content">

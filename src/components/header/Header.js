@@ -2,11 +2,13 @@ import "./navbar-mobile.css";
 import "./navbar-desktop.css";
 import "./header.css";
 import logo from "../../assets/logo.png";
+import { useState } from "react";
 
 function NavBarMobile({
+  currentBlock,
   navbarItems = [],
   register = "",
-  onRegister = () => {},
+  onRegister = () => { },
 }) {
   return (
     <div className="navbar-mobile">
@@ -38,22 +40,30 @@ function NavBarMobile({
 }
 
 function NavbarDesktop({
+  currentBlock,
+  setCurrentBlock,
   navbarItems = [],
   register = "",
-  onRegister = () => {},
+  onRegister = () => { },
 }) {
   return (
     <div className="navbar-desktop">
+
       <img alt="logo" src={logo} />
-      <nav className="titles nav">
+      <div className="titles">
+
         {navbarItems.map((e, i) => {
+          const isFocus = currentBlock === i
           return (
-            <a key={i} href="/">
+            <button key={i} className={isFocus ? 'focus' : 'un-focus'} onClick={() => {
+              console.log('dkm')
+              setCurrentBlock(i)
+            }}>
               {e.title}
-            </a>
+            </button>
           );
         })}
-      </nav>
+      </div>
 
       <button
         className="register"
@@ -62,7 +72,7 @@ function NavbarDesktop({
       >
         {register}
       </button>
-    </div>
+    </div >
   );
 }
 
@@ -75,16 +85,21 @@ function Header() {
     { title: "Liên hệ" },
   ];
 
+  const [currentBlock, setCurrentBlock] = useState(0)
+
   const register = "Đăng ký cho dòng họ";
 
   const props = {
+    currentBlock,
+    setCurrentBlock,
     navbarItems,
     register,
-    onRegister: () => {},
+    onRegister: () => { },
   };
 
   return (
     <header>
+
       <NavbarDesktop {...props} />
       <NavBarMobile {...props} />
     </header>

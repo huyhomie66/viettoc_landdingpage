@@ -1,14 +1,35 @@
 .navbar-desktop {
-  background-color: "transparent";
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 100vw;
 }
 
-.navbar-desktop > div > a {
+.un-focus{
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
   color: white;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  padding-bottom: 10px;
 }
+
+.focus { 
+  color: goldenrod ;
+  background-color: transparent;
+  cursor: pointer;
+  border: solid ;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  padding-bottom: 10px;
+  border-bottom-width: 1px;
+  border-bottom-color: goldenrod;
+
+}
+
 
 .navbar-desktop > .titles {
   color: white;

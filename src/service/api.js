@@ -1,4 +1,5 @@
 import mushroom from "mushroomjs";
+import mushroomFile from "mushroomjs-file";
 import { rootApiUrl, keySite } from "../config";
 import { load } from "recaptcha-v3";
 
@@ -10,80 +11,100 @@ async function getToken() {
   console.log(token); // Will also print the token
 }
 
-mushroom._defineAsyncResource({
-  name: "ldp_cau_hinh",
-  actions: {
-    findMany: { clientCache: true },
-    findById: { clientCache: true },
-    createOne: {},
-    updatePartially: {},
-    deleteOne: {},
-    deleteMany: {},
-  },
-  views: {},
-});
+function init(provider) {
+  provider._defineAsyncResource({
+    name: "ldp_cau_hinh",
+    actions: {
+      findMany: { clientCache: true },
+      findById: { clientCache: true },
+      createOne: {},
+      updatePartially: {},
+      deleteOne: {},
+      deleteMany: {},
+    },
+    views: {},
+  });
 
-mushroom._defineAsyncResource({
-  name: "ldp_slide",
-  actions: {
-    findMany: { clientCache: true },
-    findById: { clientCache: true },
-    createOne: {},
-    updatePartially: {},
-    deleteOne: {},
-    deleteMany: {},
-  },
-  views: {},
-});
-mushroom._defineAsyncResource({
-  name: "ldp_danh_gia",
-  actions: {
-    findMany: { clientCache: true },
-    findById: { clientCache: true },
-    createOne: {},
-    updatePartially: {},
-    deleteOne: {},
-    deleteMany: {},
-  },
-  views: {},
-});
-mushroom._defineAsyncResource({
-  name: "ldp_loi_nhan",
-  actions: {
-    findMany: { clientCache: true },
-    findById: { clientCache: true },
-    createOne: {},
-    deleteOne: {},
-    deleteMany: {},
-  },
-  views: {},
-});
-mushroom._defineAsyncResource({
-  name: "quoc_gia",
-  actions: { findMany: { clientCache: true }, findById: { clientCache: true } },
-  views: {},
-});
-mushroom._defineAsyncResource({
-  name: "province",
-  actions: { findMany: { clientCache: true }, findById: { clientCache: true } },
-  views: {},
-});
-mushroom._defineAsyncResource({
-  name: "district",
-  actions: { findMany: { clientCache: true }, findById: { clientCache: true } },
-  views: {},
-});
-mushroom._defineAsyncResource({
-  name: "commune",
-  actions: { findMany: { clientCache: true }, findById: { clientCache: true } },
-  views: {},
-});
+  provider._defineAsyncResource({
+    name: "ldp_slide",
+    actions: {
+      findMany: { clientCache: true },
+      findById: { clientCache: true },
+      createOne: {},
+      updatePartially: {},
+      deleteOne: {},
+      deleteMany: {},
+    },
+    views: {},
+  });
+  provider._defineAsyncResource({
+    name: "ldp_danh_gia",
+    actions: {
+      findMany: { clientCache: true },
+      findById: { clientCache: true },
+      createOne: {},
+      updatePartially: {},
+      deleteOne: {},
+      deleteMany: {},
+    },
+    views: {},
+  });
+  provider._defineAsyncResource({
+    name: "ldp_loi_nhan",
+    actions: {
+      findMany: { clientCache: true },
+      findById: { clientCache: true },
+      createOne: {},
+      deleteOne: {},
+      deleteMany: {},
+    },
+    views: {},
+  });
+  provider._defineAsyncResource({
+    name: "quoc_gia",
+    actions: {
+      findMany: { clientCache: true },
+      findById: { clientCache: true },
+    },
+    views: {},
+  });
+  provider._defineAsyncResource({
+    name: "province",
+    actions: {
+      findMany: { clientCache: true },
+      findById: { clientCache: true },
+    },
+    views: {},
+  });
+  provider._defineAsyncResource({
+    name: "district",
+    actions: {
+      findMany: { clientCache: true },
+      findById: { clientCache: true },
+    },
+    views: {},
+  });
+  provider._defineAsyncResource({
+    name: "commune",
+    actions: {
+      findMany: { clientCache: true },
+      findById: { clientCache: true },
+    },
+    views: {},
+  });
 
-mushroom.$using(rootApiUrl);
+  provider.$using(rootApiUrl);
+}
 
-const getImages = async (ids) => {
-  const result = await mushroom.$file.download(ids);
-  return result;
+init(mushroom);
+init(mushroomFile);
+
+const getImages = async (id) => {
+  let imgSrc = await mushroomFile.$file.linkBuilder.thumb
+    .id(id)
+    .format("png")
+    .build();
+  return imgSrc;
 };
 
 const getProvider = async () => {
