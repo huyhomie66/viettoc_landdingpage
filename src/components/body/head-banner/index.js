@@ -2,6 +2,7 @@ import "./styles.css";
 import logo from "../../../assets/logo.png";
 import { getImages, getSlide } from "../../../service/api";
 import { useEffect, useState } from "react";
+import SlideShow  from '../../../helper/SlideShow/index'
 
 const Banner = () => {
   const title = "GIA TỘC ĐOÀN VIÊN";
@@ -23,13 +24,14 @@ const Banner = () => {
   }, []);
 
   return (
+    // <SlideShow/>
     <div className="banner col item-center">
       <div className="banner-content">
         <img alt="logo" src={logo} />
-        <div className="col">
+         <div className="col">
           <span>{title}</span>
           <p>{description}</p>
-        </div>
+        </div> 
       </div>
     </div>
   );

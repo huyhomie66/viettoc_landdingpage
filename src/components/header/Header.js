@@ -99,7 +99,6 @@ function Header() {
 
   return (
     <header>
-
       <NavbarDesktop {...props} />
       <NavBarMobile {...props} />
     </header>
