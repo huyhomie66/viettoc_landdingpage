@@ -14,11 +14,70 @@
 }
 
 .family-info {
-  margin-top: 10%;
   background: hsla(212, 100%, 20%, 0.7);
-  height: 50vh;
+  height: 40vh;
   width: 50vw;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  padding: 50px, 130px, 50px, 30px;
+  padding-left: 2%;
+  /* padding: 50px, 130px, 50px, 30px; */
+  display:'flex';
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.family-title{
+  font-family: 'Playfair Display';
+  color:  #FFCA78;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.family-content{
+  font-family: 'Inter';
+font-style: italic;
+font-weight: 300;
+font-size: 16px;
+line-height: 140%;
+/* or 22px */
+color: #FFFFFF;
+margin-top: 5%;
+}
+.family-arthor{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+  
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+  
+  color: #FFFFFF;
+  margin-top: 5%;
+}
+.family-address{
+  font-family: Inter;
+font-style: italic;
+font-weight: normal;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.01em;
+margin-top: 1%;
+color: #FFFFFF;
+}
+
+.family-container{
+  width: 80%;
+}
+.family-tickit{
+  height: 40px;
+  margin-right: 20px;
+  margin-top: 10px;
 }
