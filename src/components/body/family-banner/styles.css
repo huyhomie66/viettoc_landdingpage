@@ -5,6 +5,20 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* background: rgba(15, 13, 13, 0.3); */
   opacity: 0.8;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.family-info {
+  margin-top: 10%;
+  background: hsla(212, 100%, 20%, 0.7);
+  height: 50vh;
+  width: 50vw;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 50px, 130px, 50px, 30px;
 }

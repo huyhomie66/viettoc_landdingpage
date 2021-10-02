@@ -3,8 +3,6 @@ import logo from "../../../assets/logo.png";
 import { getImages, getSlide } from "../../../service/api";
 import { useEffect, useState } from "react";
 
-import Slider from "../../../components/slider";
-
 const Banner = () => {
   const title = "GIA TỘC ĐOÀN VIÊN";
   const description =
@@ -24,7 +22,6 @@ const Banner = () => {
     init();
   }, []);
 
-  console.log();
   return (
     <div className="banner col item-center">
       <div className="banner-content">
