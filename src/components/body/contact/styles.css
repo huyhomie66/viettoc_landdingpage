@@ -1,8 +1,8 @@
 .contact {
   width: 100vw;
   min-height: 100vh;
-  /* background-image: url("../../../assets/deco.png"); */
-  z-index: -2;
+  background-image: url("../../../assets/deco.png");
+  z-index: -200;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -27,6 +27,10 @@
   background: hsla(36, 100%, 93%, 1);
 }
 
+.icon {
+  height: 30vh;
+  width: 30vh;
+}
 .contact-title {
   font-family: "Playfair Display";
   font-size: 44px;
@@ -58,11 +62,19 @@
   .contact-info {
     flex-direction: column !important;
   }
+  .contact-block {
+    width: 100%;
+    height: 80vh;
+  }
+  .message-block {
+    height: 40vh;
+  }
   .contact {
+    background: none;
+    margin-bottom: 4vh;
     flex-direction: column !important;
   }
 }
-
 .contact-info > div > h1 {
   /* color: ; */
 }

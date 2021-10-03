@@ -116,13 +116,12 @@ const getIntro = async (name = "") => {
   const response = await mushroom.ldp_cau_hinh.listAsync({
     ten: name,
   });
-
-  console.log(response);
+  return response;
 };
 
-const getIntroCount = async () => {
-  const response = await mushroom.ldp_thong_ke?.views?.chi_so_phat_trien();
-  console.log(response);
+const getDevelopmentIndex = async () => {
+  const response = await mushroom.ldp_thong_ke.views.chi_so_phat_trien();
+  return response;
 };
 
 const getSlide = async () => {
@@ -194,13 +193,13 @@ const sendMessage = async ({ name, email, note, phone, recaptchaToken }) => {
 };
 
 export {
+  getDevelopmentIndex,
   getProvider,
   active,
   getIntro,
   sendMessage,
   changePassword,
   getToken,
-  getIntroCount,
   getSlide,
   getTestimonial,
   register,

@@ -12,7 +12,6 @@ import youtubeWhite from "../../../assets/youtube-white.png";
 import zaloWhite from "../../../assets/zalo-white.png";
 import facebookWhite from "../../../assets/facebook-white.png";
 
-
 import React from "react";
 
 const MessageBlock = () => {
@@ -27,13 +26,7 @@ const MessageBlock = () => {
       <h1 className="contact-title ">Liên hệ</h1>
 
       {contacts.map((e, i) => (
-        <div
-          key={i}
-          className="row item-center "
-          style={{
-            marginBottom: "20px",
-          }}
-        >
+        <div key={i} className="row item-center " style={{}}>
           <img
             alt="icon"
             src={e.icon}
@@ -71,7 +64,7 @@ const ContactBlock = () => {
       type: "text-area",
     },
   ];
-  const onSubmit = () => { };
+  const onSubmit = () => {};
 
   return (
     <div className="col contact-block">
@@ -98,7 +91,7 @@ const Info = () => {
   return (
     <div className="row contact-info content-around">
       <div className="col content-between">
-        <img alt="logo" src={logo} />
+        <img alt="logo" src={logo} className="icon" />
         <h3 className="text-white">GIA TỘC ĐOÀN VIÊN</h3>
       </div>
       <div className="col content-between">
@@ -118,16 +111,20 @@ const Info = () => {
         ))}
       </div>
       <div className="col content-between">
-        <h1 className="text-gold">CÔNG TY CP VIỆT TỘC</h1>
+        <h1 className="text-gold">Menu</h1>
 
         {["Trang chủ", "Chính sách", "Bài viết", "Liên hệ"].map((e, i) => (
-          <p className="text-white" key={i}>{e}</p>
+          <p className="text-white" key={i}>
+            {e}
+          </p>
         ))}
       </div>
       <div className="col content-between">
         <h1 className="text-gold">Liên hệ</h1>
         {["Đăng ký", "Follow Us"].map((e, i) => (
-          <p key={i} className="text-white">{e}</p>
+          <p key={i} className="text-white">
+            {e}
+          </p>
         ))}
         <div className="row item-center content-around">
           {[zaloWhite, facebookWhite, youtubeWhite].map((e, i) => (

@@ -2,11 +2,11 @@ import "./styles.css";
 import hat from "../../../assets/hat.png";
 import vietnam from "../../../assets/vietnam.png";
 import comeinand from "../../../assets/comeinand.png";
-import Testimonial from './Testimonial'
-import Block from './Block'
+import Testimonial from "./Testimonial";
+import Block from "./Block";
 
-import React from "react";
-
+import React, { useEffect } from "react";
+import { getDevelopmentIndex, getIntro } from "../../../service/api";
 
 const Intro = () => {
   const description =
@@ -21,9 +21,19 @@ const Intro = () => {
     ],
     button: {
       title: "Trở thành dòng họ tiếp theo",
-      onClick: () => { },
+      onClick: () => {},
     },
   };
+
+  async function init() {
+    const intro = await getIntro();
+    // const developmentIndex = await getDevelopmentIndex();
+    // console.log({ intro, developmentIndex });
+  }
+
+  useEffect(() => {
+    init();
+  }, []);
 
   return (
     <div className="intro">
