@@ -1,5 +1,5 @@
 .family-banner {
-  min-width: 100vw;
+  width: 100vw;
   height: 100vh;
   background-image: url("../../../assets/family.png");
   background-repeat: no-repeat;
@@ -21,62 +21,62 @@
   border-bottom-left-radius: 20px;
   padding-left: 2%;
   /* padding: 50px, 130px, 50px, 30px; */
-  display:'flex';
+  display: "flex";
   justify-content: center;
   align-items: flex-start;
 }
 
-.family-title{
-  font-family: 'Playfair Display';
-  color:  #FFCA78;
+.family-title {
+  font-family: "Playfair Display";
+  color: #ffca78;
   font-style: normal;
   font-weight: bold;
 }
 
-.family-content{
-  font-family: 'Inter';
-font-style: italic;
-font-weight: 300;
-font-size: 16px;
-line-height: 140%;
-/* or 22px */
-color: #FFFFFF;
-margin-top: 5%;
+.family-content {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  color: #ffffff;
+  margin-top: 5%;
 }
-.family-arthor{
-  font-family: 'Inter';
+.family-arthor {
+  font-family: "Inter";
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 150%;
   /* identical to box height, or 30px */
-  
+
   display: flex;
   align-items: center;
   letter-spacing: 0.03em;
-  
-  color: #FFFFFF;
+
+  color: #ffffff;
   margin-top: 5%;
 }
-.family-address{
+.family-address {
   font-family: Inter;
-font-style: italic;
-font-weight: normal;
-font-size: 14px;
-line-height: 17px;
-/* identical to box height */
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
 
-display: flex;
-align-items: center;
-letter-spacing: 0.01em;
-margin-top: 1%;
-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.01em;
+  margin-top: 1%;
+  color: #ffffff;
 }
 
-.family-container{
+.family-container {
   width: 80%;
 }
-.family-tickit{
+.family-tickit {
   height: 40px;
   margin-right: 20px;
   margin-top: 10px;

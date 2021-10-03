@@ -1,17 +1,40 @@
 import "./navbar-mobile.css";
 import "./navbar-desktop.css";
 import "./header.css";
+import "./animation.css";
 import logo from "../../assets/logo.png";
-import { useState } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
+
+function useStickyHeader(offset = 0) {
+  const [stick, setStick] = useState(false);
+
+  const handleScroll = () => {
+    setStick(window.scrollY > offset);
+  };
+
+  useLayoutEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
+  return stick;
+}
 
 function NavBarMobile({
   currentBlock,
   navbarItems = [],
   register = "",
-  onRegister = () => { },
+  onRegister = () => {},
 }) {
+  const ref = useRef();
+  const sticky = useStickyHeader(50);
+
+  const headerClasses = `header navbar-mobile ${sticky && "sticky"}`;
   return (
-    <div className="navbar-mobile">
+    <header ref={ref} className={headerClasses}>
       <div className="navbar-menu">
         <input id="toggle" type="checkbox" />
         <label className="toggle-container" htmlFor="toggle">
@@ -35,7 +58,7 @@ function NavBarMobile({
       >
         {register}
       </button> */}
-    </div>
+    </header>
   );
 }
 
@@ -44,21 +67,27 @@ function NavbarDesktop({
   setCurrentBlock,
   navbarItems = [],
   register = "",
-  onRegister = () => { },
+  onRegister = () => {},
 }) {
-  return (
-    <div className="navbar-desktop">
+  const ref = useRef();
+  const sticky = useStickyHeader(50);
 
+  const headerClasses = `header navbar-desktop ${sticky && "sticky"}`;
+  return (
+    <header ref={ref} className={headerClasses}>
       <img alt="logo" src={logo} />
       <div className="titles">
-
         {navbarItems.map((e, i) => {
-          const isFocus = currentBlock === i
+          const isFocus = currentBlock === i;
           return (
-            <button key={i} className={isFocus ? 'focus' : 'un-focus'} onClick={() => {
-              console.log('dkm')
-              setCurrentBlock(i)
-            }}>
+            <button
+              key={i}
+              className={isFocus ? "focus" : "un-focus"}
+              onClick={() => {
+                console.log("dkm");
+                setCurrentBlock(i);
+              }}
+            >
               {e.title}
             </button>
           );
@@ -72,7 +101,7 @@ function NavbarDesktop({
       >
         {register}
       </button>
-    </div >
+    </header>
   );
 }
 
@@ -85,7 +114,7 @@ function Header() {
     { title: "Liên hệ" },
   ];
 
-  const [currentBlock, setCurrentBlock] = useState(0)
+  const [currentBlock, setCurrentBlock] = useState(0);
 
   const register = "Đăng ký cho dòng họ";
 
@@ -94,14 +123,14 @@ function Header() {
     setCurrentBlock,
     navbarItems,
     register,
-    onRegister: () => { },
+    onRegister: () => {},
   };
 
   return (
-    <header style={{zIndex:3}}>
+    <React.Fragment>
       <NavbarDesktop {...props} />
       <NavBarMobile {...props} />
-    </header>
+    </React.Fragment>
   );
 }
 

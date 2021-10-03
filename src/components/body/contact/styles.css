@@ -1,8 +1,8 @@
 .contact {
   width: 100vw;
-  height: 100vh;
-  background-image: url("../../../assets/deco.png");
-  z-index: 100;
+  min-height: 100vh;
+  /* background-image: url("../../../assets/deco.png"); */
+  z-index: -2;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -51,10 +51,18 @@
   padding-bottom: 10vh;
   background: hsla(212, 100%, 20%, 1);
   width: 100vw;
-  height: 50vh;
+  min-height: 50vh;
 }
 
+@media screen and (max-width: 800px) {
+  .contact-info {
+    flex-direction: column !important;
+  }
+  .contact {
+    flex-direction: column !important;
+  }
+}
 
-.contact-info  > div> h1 {
+.contact-info > div > h1 {
   /* color: ; */
 }

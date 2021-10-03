@@ -12,7 +12,7 @@ const Body = () => {
       <HeadBanner />
       <Intro />
       <FamilyBanner />
-      <Price />
+      {/* <Price /> */}
       <Register />
       <Contact />
     </React.Fragment>

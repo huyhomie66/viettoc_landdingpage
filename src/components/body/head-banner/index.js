@@ -2,9 +2,9 @@ import "./styles.css";
 import logo from "../../../assets/logo.png";
 import { getImages, getSlide } from "../../../service/api";
 import { useEffect, useState } from "react";
-import SlideShow  from '../../../helper/SlideShow/index'
-import banner from '../../../assets/banner.png'
-import tet from '../../../assets/tet.png'
+import SlideShow from "../../../helper/SlideShow/index";
+import banner from "../../../assets/banner.png";
+import tet from "../../../assets/tet.png";
 
 const Banner = () => {
   const title = "GIA TỘC ĐOÀN VIÊN";
@@ -30,11 +30,15 @@ const Banner = () => {
     },
     {
       img: tet,
-    }
-  ]
-  return (
-    <SlideShow arraySlides={arraySlides}/>
-  );
+    },
+    {
+      img: tet,
+    },
+    {
+      img: tet,
+    },
+  ];
+  return <SlideShow arraySlides={arraySlides} />;
 };
 
 export default Banner;

@@ -1,6 +1,6 @@
 import Header from "../components/header/Header";
 import Body from "../components/body";
-import Footer from '../components/footer'
+import Footer from "../components/footer";
 
 import {
   getProvider,
