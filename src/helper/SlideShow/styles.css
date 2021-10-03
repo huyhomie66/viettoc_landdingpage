@@ -1,12 +1,41 @@
-.slide-container{
-    height: 100vh;
-    width: 100vw;
-};
-.img-slides {
-    height: 100%;
-    width: 100%;
+.img-styles{
+  width: 100vw !important;
+  height: 100vh !important;
 }
-.slide-fade{
-    height: 100vh;
-    width: 100vw;
+.slick-initialized{
+  position: 'block !important';
 }
+
+.buttonSlides {
+  display: inline-block;
+  margin: auto;
+  padding: 0;
+  border-radius: 40px;
+  text-align: center;
+}
+
+.buttonSlides li {
+  list-style: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 3px;
+  padding: 0;
+}
+
+.buttonSlides li button {
+  border: none;
+  background: #FFFFFF;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  height: 15px;
+  width: 15px;
+  border-radius: 7.5px;
+}
+
+.buttonSlides li.slick-active button {
+  width: 50px;
+}
+
+
+

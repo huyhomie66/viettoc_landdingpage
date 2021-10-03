@@ -23,14 +23,14 @@
 }
 
 /* banner */
-.banner {
+/* .banner {
   height: 100vh;
   width: 100vw;
   background-image: url("../../../assets/banner.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-}
+} */
 
 .banner-content > img {
   max-width: 169px;

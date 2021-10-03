@@ -98,7 +98,7 @@ function Header() {
   };
 
   return (
-    <header>
+    <header style={{zIndex:3}}>
       <NavbarDesktop {...props} />
       <NavBarMobile {...props} />
     </header>

@@ -3,6 +3,8 @@ import logo from "../../../assets/logo.png";
 import { getImages, getSlide } from "../../../service/api";
 import { useEffect, useState } from "react";
 import SlideShow  from '../../../helper/SlideShow/index'
+import banner from '../../../assets/banner.png'
+import tet from '../../../assets/tet.png'
 
 const Banner = () => {
   const title = "GIA TỘC ĐOÀN VIÊN";
@@ -22,18 +24,16 @@ const Banner = () => {
   useEffect(() => {
     init();
   }, []);
-
+  const arraySlides = [
+    {
+      img: banner,
+    },
+    {
+      img: tet,
+    }
+  ]
   return (
-    // <SlideShow/>
-    <div className="banner col item-center">
-      <div className="banner-content">
-        <img alt="logo" src={logo} />
-         <div className="col">
-          <span>{title}</span>
-          <p>{description}</p>
-        </div> 
-      </div>
-    </div>
+    <SlideShow arraySlides={arraySlides}/>
   );
 };
 
