@@ -13,6 +13,19 @@ async function getToken() {
 
 function init(provider) {
   provider._defineAsyncResource({
+    name: "dong_ho",
+    actions: { _raw_http_method_dangKyDongHo: {} },
+    views: {},
+  });
+  provider._defineAsyncResource({
+    name: "nguoi_dung",
+    actions: {
+      _raw_http_method_kichHoatTaiKhoan: {},
+      _raw_http_method_doiMatKhau: {},
+    },
+    views: {},
+  });
+  provider._defineAsyncResource({
     name: "ldp_cau_hinh",
     actions: {
       findMany: { clientCache: true },
@@ -24,7 +37,6 @@ function init(provider) {
     },
     views: {},
   });
-
   provider._defineAsyncResource({
     name: "ldp_slide",
     actions: {
@@ -61,6 +73,11 @@ function init(provider) {
     views: {},
   });
   provider._defineAsyncResource({
+    name: "ldp_thong_ke",
+    actions: {},
+    views: { chi_so_phat_trien: {} },
+  });
+  provider._defineAsyncResource({
     name: "quoc_gia",
     actions: {
       findMany: { clientCache: true },
@@ -92,7 +109,6 @@ function init(provider) {
     },
     views: {},
   });
-
   provider.$using(rootApiUrl);
 }
 
@@ -120,8 +136,13 @@ const getIntro = async (name = "") => {
 };
 
 const getDevelopmentIndex = async () => {
-  const response = await mushroom.ldp_thong_ke.views.chi_so_phat_trien();
-  return response;
+  const res = await mushroom.ldp_thong_ke.views.chi_so_phat_trienAsync();
+  const data = res.result[0];
+  return {
+    family: data.so_dong_ho,
+    user: data.so_nguoi_dung,
+    provider: data.so_tinh,
+  };
 };
 
 const getSlide = async () => {

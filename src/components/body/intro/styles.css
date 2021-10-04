@@ -15,8 +15,8 @@
 }
 
 .block-body {
-  min-height: 300px;
-  width: 52vw;
+  max-height: 400px;
+  width: 56vw;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding-bottom: 58px;
@@ -27,10 +27,20 @@
 
 .block-footer {
   height: 14px;
-  width: 52vw;
+  width: 56vw;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background-color: #ffce87;
+}
+
+@media screen and (max-width: 800px) {
+  .block-body {
+    width: 80vw !important;
+  }
+
+  .block-footer {
+    width: 80vw !important;
+  }
 }
 
 .block-container {

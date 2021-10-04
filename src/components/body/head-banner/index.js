@@ -2,7 +2,7 @@ import "./styles.css";
 import logo from "../../../assets/logo.png";
 import { getImages, getSlide } from "../../../service/api";
 import { useEffect, useState } from "react";
-import SlideShow from "../../../helper/SlideShow/index";
+import Slider from "../../slider";
 import banner from "../../../assets/banner.png";
 import tet from "../../../assets/tet.png";
 
@@ -38,7 +38,7 @@ const Banner = () => {
       img: tet,
     },
   ];
-  return <SlideShow arraySlides={arraySlides} />;
+  return <Slider arraySlides={arraySlides} />;
 };
 
 export default Banner;
