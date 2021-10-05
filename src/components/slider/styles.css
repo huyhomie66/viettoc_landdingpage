@@ -5,6 +5,12 @@
   position: "block !important";
 }
 
+@media screen and (max-width: 800px) {
+  .img-styles {
+    height: 60vh !important;
+  }
+}
+
 .buttonSlides {
   display: inline-block;
   margin: auto;

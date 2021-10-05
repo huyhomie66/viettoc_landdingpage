@@ -28,6 +28,10 @@ body {
   align-self: flex-start;
 }
 
+.bg-blue {
+  background: hsla(212, 100%, 20%, 1);
+}
+
 .redPlum {
   color: hsla(359, 70%, 37%, 1);
 }
@@ -40,19 +44,19 @@ body {
   color: white;
 }
 
-.width-100{
+.width-100 {
   width: 100%;
 }
 
-.pd-right-10 { 
+.pd-right-10 {
   padding-right: 10px;
 }
 
-.pd-right-20 { 
+.pd-right-20 {
   padding-right: 20px;
 }
 
-.pd-right-30 { 
+.pd-right-30 {
   padding-right: 30px;
 }
 
